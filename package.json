@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "format:check": "npx prettier@3.3.3 --check .",
+    "format:write": "npx prettier@3.3.3 --write .",
+    "check": "npm run format:check && npm run lint"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.0",
