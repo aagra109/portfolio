@@ -5,13 +5,11 @@ import React from "react";
 
 const Page = () => {
   return (
-    <div>
+    <main className="relative overflow-x-clip pb-12">
       <Introduction />
       <About />
       <Experience />
-      {/* <About />
-      <About /> */}
-    </div>
+    </main>
   );
 };
 
