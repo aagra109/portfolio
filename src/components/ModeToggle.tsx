@@ -1,46 +1,22 @@
 "use client";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { Sun, Moon } from "lucide-react";
 
 const ModeToggle = () => {
-  const { theme, setTheme } = useTheme();
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  const toggleTheme = () => {
-    if (theme) {
-      setTheme(theme === "dark" ? "light" : "dark");
-    }
-  };
-
-  useEffect(() => {
-    if (isMounted && !theme) {
-      setTheme("light");
-    }
-  }, [isMounted, setTheme, theme]);
-
-  if (!isMounted) {
-    return null;
-  }
+  const { resolvedTheme, setTheme } = useTheme();
 
   return (
     <Button
       variant="outline"
       size="icon"
-      className="ml-2 border-border/90 bg-card text-primary hover:bg-accent hover:text-accent-foreground"
-      onClick={toggleTheme}
+      className="relative ml-2 border-border/90 bg-card text-primary hover:bg-accent hover:text-accent-foreground"
+      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
       aria-label="Toggle theme"
     >
-      {theme === "dark" ? (
-        <Sun key="light" className="h-[1.2rem] w-[1.2rem] " />
-      ) : (
-        <Moon key="dark" className="h-[1.2rem] w-[1.2rem]" />
-      )}
+      <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+      <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+      <span className="sr-only">Toggle theme</span>
     </Button>
   );
 };
