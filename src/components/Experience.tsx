@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-  CardFooter,
-} from "./ui/card";
+import { Card, CardContent } from "./ui/card";
 
 const experiences = [
   {
@@ -50,58 +43,58 @@ const experiences = [
       "Excel",
     ],
   },
-  {
-    title:
-      "Software Development Intern, Jarvis Technology & Strategy Consulting",
-    location: "Mumbai, India",
-    duration: "February 2019 - May 2019",
-    points: [
-      "Collaborated as a key member of the engineering team to design a multilingual, cross-platform workforce management system for volunteer acquisition, verification, engagement, and tracking.",
-      "Crafted tools instrumental in engaging over 5 million party workers, facilitating the transmission of over 230 million messages, and achieving a Net Promoter Score (NPS) of 80.",
-      "Architected and implemented the complete onboarding and verification process for volunteers leveraging Ruby on Rails and AngularJs.",
-    ],
-    skills: ["Angular", "Ruby on Rails"],
-  },
 ];
 
 const Experience = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-full mt-10">
-      <p className="text-4xl font-medium text-primary p-1">Experience</p>
-      {experiences.map((exp, index) => (
-        <div
-          key={index}
-          className="text-primary p-6 m-4 w-full max-w-5xl rounded-lg bg-primary-foreground"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-12">
-            <div className="col-span-1 md:col-span-8">
-              <p className="text-xl font-bold">{exp.title}</p>
-              <p className="text-opacity-75 text-secondary">{exp.location}</p>
-              <p className="text-primary font-regular mt-2">{exp.duration}</p>
-              <ul className="list-disc ml-4 mt-4">
-                {exp.points.map((point, idx) => (
-                  <li key={idx} className="text-sm">
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="md:block md:col-span-4 md:order-1">
-              <div className="flex flex-wrap gap-2 mt-4 font-light">
-                {exp.skills.map((skill, idx) => (
-                  <span
-                    key={idx}
-                    className="bg-secondary text-primary-foreground px-2 py-1 rounded"
-                  >
-                    {skill}
-                  </span>
-                ))}
+    <section
+      id="experience"
+      className="mx-auto w-full max-w-6xl scroll-mt-24 px-6 pb-20 pt-8 sm:px-10"
+    >
+      <p className="p-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary sm:text-sm">
+        Experience
+      </p>
+      <div className="mt-4 space-y-5">
+        {experiences.map((exp, index) => (
+          <Card
+            key={index}
+            className="overflow-hidden border-border/80 bg-card/95 transition-colors duration-300 hover:border-primary/45"
+          >
+            <CardContent className="grid gap-6 p-6 pt-6 md:grid-cols-12 md:gap-8">
+              <div className="space-y-3 md:col-span-8">
+                <p className="text-xl font-semibold text-foreground">
+                  {exp.title}
+                </p>
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
+                  <p className="text-muted-foreground">{exp.location}</p>
+                  <p className="font-medium text-primary">{exp.duration}</p>
+                </div>
+                <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
+                  {exp.points.map((point, idx) => (
+                    <li key={idx}>{point}</li>
+                  ))}
+                </ul>
               </div>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
+              <div className="md:col-span-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+                  Stack
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {exp.skills.map((skill, idx) => (
+                    <span
+                      key={idx}
+                      className="rounded-full border border-accent-foreground/20 bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground sm:text-sm"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </section>
   );
 };
 

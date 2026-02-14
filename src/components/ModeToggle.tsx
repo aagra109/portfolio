@@ -9,7 +9,7 @@ const ModeToggle = () => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true); // component is mounted, update state
+    setIsMounted(true);
   }, []);
 
   const toggleTheme = () => {
@@ -22,14 +22,20 @@ const ModeToggle = () => {
     if (isMounted && !theme) {
       setTheme("light");
     }
-  }, [isMounted, theme]);
+  }, [isMounted, setTheme, theme]);
 
   if (!isMounted) {
     return null;
   }
 
   return (
-    <Button variant="outline" size="icon" onClick={toggleTheme}>
+    <Button
+      variant="outline"
+      size="icon"
+      className="ml-2 border-border/90 bg-card text-primary hover:bg-accent hover:text-accent-foreground"
+      onClick={toggleTheme}
+      aria-label="Toggle theme"
+    >
       {theme === "dark" ? (
         <Sun key="light" className="h-[1.2rem] w-[1.2rem] " />
       ) : (

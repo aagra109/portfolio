@@ -3,9 +3,9 @@ import { useScrollPosition } from "@/app/hooks/useScrollPosition";
 import ModeToggle from "./ModeToggle";
 
 const navigation = [
-  { name: "About Me", href: "#" },
-  { name: "Projects", href: "#" },
-  { name: "Experience", href: "#" },
+  { name: "Intro", href: "#intro" },
+  { name: "About", href: "#about" },
+  { name: "Experience", href: "#experience" },
 ];
 
 export default function Header() {
@@ -14,30 +14,33 @@ export default function Header() {
   }
 
   const scrollPosition = useScrollPosition();
+  const isScrolled = scrollPosition > 24;
 
   return (
-    <div
+    <header
       className={classNames(
-        "flex justify-end mr-10 top-0 w-full h-full",
-        scrollPosition > 50 ? "sticky z-50 bg-primary-foreground" : ""
+        "sticky top-0 z-50 w-full transition-all duration-300",
+        isScrolled
+          ? "border-b border-border bg-background/90 backdrop-blur-md"
+          : "bg-transparent"
       )}
     >
-      <div className="max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div className="flex justify-end h-16 items-center">
-          <div className="flex space-x-4">
+      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-end px-6 sm:px-10">
+        <div className="flex items-center gap-1 sm:gap-2">
+          <nav className="flex items-center gap-1 sm:gap-2">
             {navigation.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="relative rounded-md px-3 py-2 text-sm  text-primary font-semibold hover:underline hover:underline-offset-4 hover:text-secondary"
+                className="rounded-full px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground sm:text-sm"
               >
                 {item.name}
               </a>
             ))}
-          </div>
+          </nav>
           <ModeToggle />
         </div>
       </div>
-    </div>
+    </header>
   );
 }
