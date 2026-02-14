@@ -3,7 +3,6 @@ import { useScrollPosition } from "@/app/hooks/useScrollPosition";
 import ModeToggle from "./ModeToggle";
 
 const navigation = [
-  { name: "Intro", href: "#intro" },
   { name: "About", href: "#about" },
   { name: "Experience", href: "#experience" },
 ];
