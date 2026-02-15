@@ -16,7 +16,7 @@ export default function Header() {
               <a
                 key={item.name}
                 href={item.href}
-                className="rounded-full px-3 py-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground transition-colors visited:text-muted-foreground hover:bg-accent hover:text-accent-foreground sm:text-sm"
+                className="rounded-full border border-transparent px-3 py-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground transition-colors visited:text-muted-foreground hover:border-primary/30 hover:bg-primary/10 hover:text-primary dark:hover:border-transparent dark:hover:bg-accent dark:hover:text-accent-foreground sm:text-sm"
               >
                 {item.name}
               </a>

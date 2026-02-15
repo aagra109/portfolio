@@ -102,7 +102,7 @@ const Introduction = () => {
                           <span className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-primary/10" />
                         </span>
                         <span className="relative z-10 flex items-center gap-2">
-                          <span className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-accent text-accent-foreground">
+                          <span className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-primary/30 bg-primary/10 text-primary dark:border-accent-foreground/20 dark:bg-accent dark:text-accent-foreground">
                             <Icon className="h-4 w-4" />
                           </span>
                           <span className="text-sm font-semibold text-foreground">

@@ -8,9 +8,9 @@ const ModeToggle = () => {
 
   return (
     <Button
-      variant="outline"
+      variant="ghost"
       size="icon"
-      className="relative ml-2 border-border/90 bg-card text-primary hover:bg-accent hover:text-accent-foreground"
+      className="relative ml-1 h-9 w-9 rounded-full border border-transparent text-muted-foreground hover:border-primary/30 hover:bg-primary/10 hover:text-primary dark:hover:border-transparent dark:hover:bg-accent dark:hover:text-accent-foreground"
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
       aria-label="Toggle theme"
     >

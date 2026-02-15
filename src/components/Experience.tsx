@@ -102,7 +102,7 @@ const Experience = () => {
               aria-hidden="true"
               className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-primary/10" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-primary/10" />
             </div>
             <CardContent className="relative z-10 grid gap-6 p-6 pt-6 md:grid-cols-12 md:gap-8">
               <div className="space-y-3 md:col-span-8">
@@ -124,9 +124,15 @@ const Experience = () => {
                   <p className="text-muted-foreground">{exp.location}</p>
                   <p className="font-medium text-primary">{exp.duration}</p>
                 </div>
-                <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
+                <ul className="space-y-2.5">
                   {exp.points.map((point, idx) => (
-                    <li key={idx}>{point}</li>
+                    <li
+                      key={idx}
+                      className="grid grid-cols-[auto_1fr] items-start gap-3 text-sm leading-relaxed text-foreground/90 sm:text-base"
+                    >
+                      <span className="mt-2.5 inline-flex h-1.5 w-4 flex-none rounded-full bg-primary/70" />
+                      <span>{point}</span>
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -138,7 +144,7 @@ const Experience = () => {
                   {exp.skills.map((skill, idx) => (
                     <span
                       key={idx}
-                      className="rounded-full border border-accent-foreground/20 bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground sm:text-sm"
+                      className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary sm:text-sm dark:border-accent-foreground/20 dark:bg-accent dark:text-accent-foreground"
                     >
                       {skill}
                     </span>
