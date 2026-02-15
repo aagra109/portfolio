@@ -3,6 +3,7 @@ import ModeToggle from "./ModeToggle";
 
 const navigation = [
   { name: "About", sectionId: "about" },
+  { name: "Skills", sectionId: "skills" },
   { name: "Experience", sectionId: "experience" },
 ];
 

@@ -39,14 +39,14 @@ const Introduction = () => {
             duration: 0.2,
           }}
         >
-          <h1 className="p-1 font-space-grotesk font-extrabold text-4xl text-foreground sm:text-6xl">
+          <h1 className="p-1 font-space-grotesk font-extrabold text-5xl text-foreground sm:text-6xl">
             Ansh Agrawal
           </h1>
         </motion.div>
         <AnimatedTyping
           text="I am a software engineer crafting web experiences with code and
           creativity."
-          className="max-w-2xl p-1 text-lg font-medium leading-relaxed text-muted-foreground sm:text-xl"
+          className="max-w-4xl p-1 text-lg font-medium leading-relaxed text-muted-foreground sm:text-xl"
         />
         <div className="mt-4 rounded-2xl border border-border/80 bg-card/95 p-6 shadow-sm shadow-primary/10 sm:p-8">
           <h2 className="text-xs font-semibold uppercase tracking-widest text-primary sm:text-sm">
