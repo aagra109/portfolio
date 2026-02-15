@@ -93,9 +93,15 @@ const Introduction = () => {
                             ? "noreferrer noopener"
                             : undefined
                         }
-                        className="group flex items-center justify-between rounded-lg border border-border bg-card px-3 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+                        className="group relative isolate flex items-center justify-between overflow-hidden rounded-lg border border-border bg-card px-3 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
                       >
-                        <span className="flex items-center gap-2">
+                        <span
+                          aria-hidden="true"
+                          className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                        >
+                          <span className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-primary/10" />
+                        </span>
+                        <span className="relative z-10 flex items-center gap-2">
                           <span className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-accent text-accent-foreground">
                             <Icon className="h-4 w-4" />
                           </span>
@@ -103,7 +109,7 @@ const Introduction = () => {
                             {social.label}
                           </span>
                         </span>
-                        <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-primary" />
+                        <ArrowUpRight className="relative z-10 h-4 w-4 text-muted-foreground transition-colors group-hover:text-primary" />
                       </a>
                     );
                   })}

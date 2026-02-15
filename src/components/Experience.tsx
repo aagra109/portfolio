@@ -96,9 +96,15 @@ const Experience = () => {
         {experiences.map((exp, index) => (
           <Card
             key={index}
-            className="overflow-hidden border-border/80 bg-card/95 transition-colors duration-300 hover:border-primary/45"
+            className="group relative isolate overflow-hidden border-border/80 bg-card/95 transition-colors duration-300 hover:border-primary/45"
           >
-            <CardContent className="grid gap-6 p-6 pt-6 md:grid-cols-12 md:gap-8">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-primary/10" />
+            </div>
+            <CardContent className="relative z-10 grid gap-6 p-6 pt-6 md:grid-cols-12 md:gap-8">
               <div className="space-y-3 md:col-span-8">
                 <p className="text-xl font-semibold text-foreground">
                   {exp.role},{" "}
