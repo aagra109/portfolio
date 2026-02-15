@@ -8,14 +8,14 @@ const ModeToggle = () => {
 
   return (
     <Button
-      variant="outline"
+      variant="ghost"
       size="icon"
-      className="relative ml-2 border-border/90 bg-card text-primary hover:bg-accent hover:text-accent-foreground"
+      className="relative ml-1 h-9 w-9 rounded-full border border-transparent text-muted-foreground hover:border-primary/30 hover:bg-primary/10 hover:text-primary dark:hover:border-transparent dark:hover:bg-accent dark:hover:text-accent-foreground"
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
       aria-label="Toggle theme"
     >
-      <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-      <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+      <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+      <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
       <span className="sr-only">Toggle theme</span>
     </Button>
   );
