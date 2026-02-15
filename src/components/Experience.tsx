@@ -135,7 +135,7 @@ const Experience = () => {
         Experience
       </h2>
       <div className="mt-4 space-y-5">
-        {experiences.map((exp) => (
+        {experiences.map((exp, index) => (
           <motion.div
             key={`${exp.company}-${exp.duration}`}
             initial={cardInitial}
