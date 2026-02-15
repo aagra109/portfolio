@@ -131,9 +131,9 @@ const Experience = () => {
       id="experience"
       className="mx-auto w-full max-w-6xl scroll-mt-24 px-6 pb-20 pt-8 sm:px-10"
     >
-      <p className="p-1 text-xs font-semibold uppercase tracking-widest text-primary sm:text-sm">
+      <h2 className="p-1 text-xs font-semibold uppercase tracking-widest text-primary sm:text-sm">
         Experience
-      </p>
+      </h2>
       <div className="mt-4 space-y-5">
         {experiences.map((exp, index) => (
           <motion.div
