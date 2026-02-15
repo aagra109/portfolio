@@ -5,7 +5,7 @@ const experiences = [
   {
     role: "Software Engineer",
     company: "SoftPoint",
-    companyUrl: "https://example.com/softpoint",
+    companyUrl: "https://softpoint.io/",
     location: "Scottsdale, Arizona",
     duration: "August 2025 - Present",
     points: [
@@ -26,7 +26,7 @@ const experiences = [
   {
     role: "Software Engineer Intern",
     company: "RoundTechSquare",
-    companyUrl: "https://example.com/roundtechsquare",
+    companyUrl: "https://www.roundtechsquare.com/",
     location: "San Francisco, California",
     duration: "February 2025 - May 2025",
     points: [
@@ -39,7 +39,7 @@ const experiences = [
   {
     role: "Software Engineer Intern",
     company: "Celebal Technologies",
-    companyUrl: "https://example.com/celebal-technologies",
+    companyUrl: "https://celebaltech.com/",
     location: "Katy, Texas",
     duration: "September 2024 - January 2025",
     points: [
@@ -57,7 +57,7 @@ const experiences = [
   {
     role: "Software Engineer Intern",
     company: "SoftPoint",
-    companyUrl: "https://example.com/softpoint",
+    companyUrl: "https://softpoint.io/",
     location: "Scottsdale, Arizona",
     duration: "May 2024 - August 2024",
     points: [
@@ -71,7 +71,7 @@ const experiences = [
   {
     role: "Business Analyst",
     company: "Searce Inc.",
-    companyUrl: "https://example.com/searce",
+    companyUrl: "https://www.searce.com/",
     location: "Pune, India",
     duration: "January 2022 - July 2023",
     points: [
