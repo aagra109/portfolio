@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/Header";
 import { spaceGrotesk } from "@/lib/fonts";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Ansh Agrawal Portfolio",
@@ -26,6 +27,7 @@ export default function RootLayout({
         >
           <Header />
           {children}
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>
