@@ -3,7 +3,9 @@ import { Card, CardContent } from "./ui/card";
 
 const experiences = [
   {
-    title: "Software Engineer, SoftPoint",
+    role: "Software Engineer",
+    company: "SoftPoint",
+    companyUrl: "https://example.com/softpoint",
     location: "Scottsdale, Arizona",
     duration: "August 2025 - Present",
     points: [
@@ -13,7 +15,6 @@ const experiences = [
       "Designed a scalable multi-tenant SendGrid email infrastructure with four configurable templates to support three enterprise financial applications processing 50K+ monthly emails, eliminating per-application development effort.",
     ],
     skills: [
-      "PHP",
       "Laravel",
       "React",
       "MySQL",
@@ -23,7 +24,9 @@ const experiences = [
     ],
   },
   {
-    title: "Software Engineer Intern, RoundTechSquare",
+    role: "Software Engineer Intern",
+    company: "RoundTechSquare",
+    companyUrl: "https://example.com/roundtechsquare",
     location: "San Francisco, California",
     duration: "February 2025 - May 2025",
     points: [
@@ -34,7 +37,9 @@ const experiences = [
     skills: ["React", "TypeScript", "NestJS", "MongoDB"],
   },
   {
-    title: "Software Engineer Intern, Celebal Technologies",
+    role: "Software Engineer Intern",
+    company: "Celebal Technologies",
+    companyUrl: "https://example.com/celebal-technologies",
     location: "Katy, Texas",
     duration: "September 2024 - January 2025",
     points: [
@@ -50,7 +55,9 @@ const experiences = [
     ],
   },
   {
-    title: "Software Engineer Intern, SoftPoint",
+    role: "Software Engineer Intern",
+    company: "SoftPoint",
+    companyUrl: "https://example.com/softpoint",
     location: "Scottsdale, Arizona",
     duration: "May 2024 - August 2024",
     points: [
@@ -62,7 +69,9 @@ const experiences = [
     skills: ["React", "TypeScript", "Next.js", "Laravel"],
   },
   {
-    title: "Business Analyst, Searce Inc.",
+    role: "Business Analyst",
+    company: "Searce Inc.",
+    companyUrl: "https://example.com/searce",
     location: "Pune, India",
     duration: "January 2022 - July 2023",
     points: [
@@ -92,7 +101,18 @@ const Experience = () => {
             <CardContent className="grid gap-6 p-6 pt-6 md:grid-cols-12 md:gap-8">
               <div className="space-y-3 md:col-span-8">
                 <p className="text-xl font-semibold text-foreground">
-                  {exp.title}
+                  {exp.role},{" "}
+                  <a
+                    href={exp.companyUrl}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="group inline-flex text-base font-semibold text-primary transition-colors duration-200 hover:text-primary/80 md:text-lg"
+                  >
+                    <span className="relative">
+                      {exp.company}
+                      <span className="pointer-events-none absolute inset-x-0 -bottom-0.5 h-0.5 origin-left scale-x-75 bg-primary/55 transition-transform duration-200 group-hover:scale-x-100" />
+                    </span>
+                  </a>
                 </p>
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
                   <p className="text-muted-foreground">{exp.location}</p>
