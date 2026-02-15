@@ -32,16 +32,23 @@ const Introduction = () => {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary sm:text-sm">
             About
           </p>
-          <p className="pt-5 text-left text-base font-medium leading-8 text-foreground/90 sm:text-lg">
-            Lorem ipsum odor amet, consectetuer adipiscing elit. Parturient
-            quisque diam lobortis eget ad dui inceptos feugiat. Orci mauris
-            dapibus mauris interdum maximus fusce sed maximus. Dui fringilla
-            aliquet turpis nibh mus ad. Torquent porta accumsan eleifend
-            fermentum mollis vel ante. In enim rutrum luctus ultrices lacinia,
-            amet fringilla. Vulputate enim tortor primis purus et finibus
-            ultricies. Viverra iaculis dolor nunc; eros facilisi habitasse
-            fusce.
-          </p>
+          <div className="max-w-4xl space-y-3 pt-4 text-left text-base font-medium leading-7 text-foreground/90 sm:text-lg sm:leading-8">
+            <p>
+              Hey, I am a full-stack developer who enjoys building thoughtful
+              web applications and making systems work smoothly at scale.
+            </p>
+            <p>
+              Lately, I have been exploring system architecture and AI agents to
+              accelerate development workflows and ship better products faster.
+            </p>
+            <p>
+              Outside of work, I'm usually exploring what's new in tech over a
+              cup of coffee, or planning my next travel adventure.
+            </p>
+            <p>
+              If you are here, I would love to connect, feel free to reach out!
+            </p>
+          </div>
         </div>
       </div>
     </section>
