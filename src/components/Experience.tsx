@@ -135,9 +135,9 @@ const Experience = () => {
         Experience
       </h2>
       <div className="mt-4 space-y-5">
-        {experiences.map((exp, index) => (
+        {experiences.map((exp) => (
           <motion.div
-            key={index}
+            key={`${exp.company}-${exp.duration}`}
             initial={cardInitial}
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={CARD_VIEWPORT}
@@ -185,9 +185,9 @@ const Experience = () => {
                     whileInView="show"
                     viewport={POINTS_VIEWPORT}
                   >
-                    {exp.points.map((point, idx) => (
+                    {exp.points.map((point) => (
                       <motion.li
-                        key={idx}
+                        key={`${exp.company}-${exp.duration}-${point}`}
                         variants={pointItemVariants}
                         className="grid grid-cols-[auto_1fr] items-start gap-3 text-sm leading-relaxed text-foreground/90 sm:text-base"
                       >
@@ -202,9 +202,9 @@ const Experience = () => {
                     Tech Stack
                   </p>
                   <div className="mt-3 flex flex-wrap gap-2">
-                    {exp.skills.map((skill, idx) => (
+                    {exp.skills.map((skill) => (
                       <span
-                        key={idx}
+                        key={`${exp.company}-${exp.duration}-${skill}`}
                         className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary sm:text-sm dark:border-accent-foreground/20 dark:bg-accent dark:text-accent-foreground"
                       >
                         {skill}
