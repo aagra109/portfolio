@@ -51,7 +51,7 @@ const Experience = () => {
       id="experience"
       className="mx-auto w-full max-w-6xl scroll-mt-24 px-6 pb-20 pt-8 sm:px-10"
     >
-      <p className="p-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary sm:text-sm">
+      <p className="p-1 text-xs font-semibold uppercase tracking-widest text-primary sm:text-sm">
         Experience
       </p>
       <div className="mt-4 space-y-5">
@@ -76,7 +76,7 @@ const Experience = () => {
                 </ul>
               </div>
               <div className="md:col-span-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+                <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
                   Stack
                 </p>
                 <div className="mt-3 flex flex-wrap gap-2">
