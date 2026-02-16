@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Linkedin, Mail } from "lucide-react";
+import { ArrowUpRight, FileText, Linkedin, Mail } from "lucide-react";
 import React from "react";
 import GitHubIcon from "./icons/GitHubIcon";
 import AnimatedTyping from "./ui/AnimatedTyping";
@@ -20,6 +20,11 @@ const socialLinks = [
     label: "Email",
     href: "mailto:ansh-agrawal@outlook.com",
     icon: Mail,
+  },
+  {
+    label: "Resume",
+    href: "https://docs.google.com/document/d/1B4O0gG-3JJFWH1Um90DGE6mSuLpYLjocYXUGDyNhSw0",
+    icon: FileText,
   },
 ];
 
@@ -78,7 +83,7 @@ const Introduction = () => {
                     Open to exploring new opportunities
                   </p>
                 </div>
-                <div className="mt-3 grid gap-2 sm:grid-cols-3">
+                <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
                   {socialLinks.map((social) => {
                     const Icon = social.icon;
                     return (
