@@ -2,34 +2,29 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import React from "react";
-import { CloudCog, Code2, Database, Layers3 } from "lucide-react";
+import {
+  CloudCog,
+  Code2,
+  Database,
+  Layers3,
+  type LucideIcon,
+} from "lucide-react";
+import {
+  skillGroups,
+  skillsDescription,
+  type SkillGroupIcon,
+} from "@/content/skills";
 import { Card, CardContent } from "./ui/card";
-
-const skillGroups = [
-  {
-    title: "Languages",
-    icon: Code2,
-    skills: ["TypeScript", "Python", "JavaScript", "PHP", "SQL"],
-  },
-  {
-    title: "Full-Stack Web",
-    icon: Layers3,
-    skills: ["React", "Next.js", "Node.js", "Express.js", "Laravel"],
-  },
-  {
-    title: "Cloud & DevOps",
-    icon: CloudCog,
-    skills: ["Azure", "Google Cloud", "GitHub Actions", "Docker", "Linux"],
-  },
-  {
-    title: "Databases",
-    icon: Database,
-    skills: ["PostgreSQL", "MongoDB", "Redis", "MySQL"],
-  },
-];
 
 const SKILL_CARD_VIEWPORT = { once: true, amount: 0.25 } as const;
 const SKILL_EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
+
+const skillGroupIconMap = {
+  code: Code2,
+  layers: Layers3,
+  cloud: CloudCog,
+  database: Database,
+} satisfies Record<SkillGroupIcon, LucideIcon>;
 
 const Skills = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -47,13 +42,12 @@ const Skills = () => {
         Skills
       </h2>
       <p className="mt-3 max-w-3xl p-1 text-base leading-relaxed text-muted-foreground sm:text-lg">
-        High-impact technologies I use most to build modern, production-ready
-        applications.
+        {skillsDescription}
       </p>
 
       <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         {skillGroups.map((group, index) => {
-          const Icon = group.icon;
+          const Icon = skillGroupIconMap[group.icon];
           return (
             <motion.div
               key={group.title}
