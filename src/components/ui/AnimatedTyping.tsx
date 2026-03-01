@@ -1,4 +1,6 @@
-import { motion } from "framer-motion";
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
 import React from "react";
 
 type AnimatedTypingProps = {
@@ -7,7 +9,12 @@ type AnimatedTypingProps = {
 };
 
 const AnimatedTyping = ({ text, className = "" }: AnimatedTypingProps) => {
+  const prefersReducedMotion = useReducedMotion();
   const words = text.split(" ");
+
+  if (prefersReducedMotion) {
+    return <p className={className}>{text}</p>;
+  }
 
   return (
     <p className={className}>
