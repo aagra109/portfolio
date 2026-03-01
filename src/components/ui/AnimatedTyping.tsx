@@ -1,16 +1,17 @@
 import { motion } from "framer-motion";
 import React from "react";
 
-const AnimatedTyping = ({
-  text,
-  className,
-}: {
+type AnimatedTypingProps = {
   text: string;
-  className: string;
-}) => {
+  className?: string;
+};
+
+const AnimatedTyping = ({ text, className = "" }: AnimatedTypingProps) => {
+  const words = text.split(" ");
+
   return (
     <p className={className}>
-      {text.split(" ").map((el, i) => (
+      {words.map((word, i) => (
         <motion.span
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -18,9 +19,9 @@ const AnimatedTyping = ({
             duration: 0.5,
             delay: i / 10,
           }}
-          key={i}
+          key={`${word}-${i}`}
         >
-          {el}{" "}
+          {word}{" "}
         </motion.span>
       ))}
     </p>
