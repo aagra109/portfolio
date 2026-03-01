@@ -10,21 +10,24 @@ type AnimatedTypingProps = {
 
 const AnimatedTyping = ({ text, className = "" }: AnimatedTypingProps) => {
   const prefersReducedMotion = useReducedMotion();
+  const [hasMounted, setHasMounted] = React.useState(false);
   const words = text.split(" ");
 
-  if (prefersReducedMotion) {
-    return <p className={className}>{text}</p>;
-  }
+  React.useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  const shouldAnimate = hasMounted && !prefersReducedMotion;
 
   return (
     <p className={className}>
       {words.map((word, i) => (
         <motion.span
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={shouldAnimate ? { opacity: 0 } : false}
+          animate={shouldAnimate ? { opacity: 1 } : undefined}
           transition={{
-            duration: 0.5,
-            delay: i / 10,
+            duration: shouldAnimate ? 0.5 : 0,
+            delay: shouldAnimate ? i / 10 : 0,
           }}
           key={`${word}-${i}`}
         >
