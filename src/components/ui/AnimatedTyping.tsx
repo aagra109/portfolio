@@ -1,26 +1,38 @@
-import { motion } from "framer-motion";
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
 import React from "react";
 
-const AnimatedTyping = ({
-  text,
-  className,
-}: {
+type AnimatedTypingProps = {
   text: string;
-  className: string;
-}) => {
+  className?: string;
+};
+
+const AnimatedTyping = ({ text, className = "" }: AnimatedTypingProps) => {
+  const prefersReducedMotion = useReducedMotion();
+  const [hasMounted, setHasMounted] = React.useState(false);
+  const words = text.trim().split(/\s+/).filter(Boolean);
+
+  React.useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  const shouldAnimate = hasMounted && !prefersReducedMotion;
+
   return (
     <p className={className}>
-      {text.split(" ").map((el, i) => (
+      {words.map((word, i) => (
         <motion.span
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={shouldAnimate ? { opacity: 0 } : false}
+          animate={shouldAnimate ? { opacity: 1 } : undefined}
           transition={{
-            duration: 0.5,
-            delay: i / 10,
+            duration: shouldAnimate ? 0.5 : 0,
+            delay: shouldAnimate ? i / 10 : 0,
           }}
-          key={i}
+          key={`${word}-${i}`}
         >
-          {el}{" "}
+          {word}
+          {i < words.length - 1 ? " " : null}
         </motion.span>
       ))}
     </p>
