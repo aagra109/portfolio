@@ -2,31 +2,27 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, FileText, Linkedin, Mail } from "lucide-react";
 import React from "react";
+import {
+  aboutParagraphs,
+  heroSubtitle,
+  socialLinks,
+  type SocialLinkIcon,
+} from "@/content/introduction";
 import GitHubIcon from "./icons/GitHubIcon";
 import AnimatedTyping from "./ui/AnimatedTyping";
 
-const socialLinks = [
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/anshagrawal6/",
-    icon: Linkedin,
-  },
-  {
-    label: "GitHub",
-    href: "https://github.com/aagra109",
-    icon: GitHubIcon,
-  },
-  {
-    label: "Email",
-    href: "mailto:ansh-agrawal@outlook.com",
-    icon: Mail,
-  },
-  {
-    label: "Resume",
-    href: "https://docs.google.com/document/d/1B4O0gG-3JJFWH1Um90DGE6mSuLpYLjocYXUGDyNhSw0",
-    icon: FileText,
-  },
-];
+const getSocialIcon = (icon: SocialLinkIcon) => {
+  switch (icon) {
+    case "linkedin":
+      return Linkedin;
+    case "github":
+      return GitHubIcon;
+    case "email":
+      return Mail;
+    case "resume":
+      return FileText;
+  }
+};
 
 const Introduction = () => {
   return (
@@ -49,8 +45,7 @@ const Introduction = () => {
           </h1>
         </motion.div>
         <AnimatedTyping
-          text="I am a software engineer crafting web experiences with code and
-          creativity."
+          text={heroSubtitle}
           className="max-w-4xl p-1 text-lg font-medium leading-relaxed text-muted-foreground sm:text-xl"
         />
         <div className="mt-4 rounded-2xl border border-border/80 bg-card/95 p-6 shadow-sm shadow-primary/10 sm:p-8">
@@ -58,21 +53,9 @@ const Introduction = () => {
             About
           </h2>
           <div className="max-w-4xl space-y-3 pt-4 text-left text-base font-medium leading-7 text-foreground/90 sm:text-lg sm:leading-8">
-            <p>
-              Hey, I am a full-stack developer who enjoys building thoughtful
-              web applications and making systems work smoothly at scale.
-            </p>
-            <p>
-              Lately, I have been exploring system architecture and AI agents to
-              accelerate development workflows and ship better products faster.
-            </p>
-            <p>
-              Outside of work, I am usually exploring what is new in tech over a
-              cup of coffee, or planning my next travel adventure.
-            </p>
-            <p>
-              If you are here, I would love to connect, feel free to reach out!
-            </p>
+            {aboutParagraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
             <div className="pt-2">
               <div className="rounded-xl border border-border/70 bg-background/80 p-4 sm:p-5">
                 <div className="flex flex-wrap items-center justify-between gap-2">
@@ -85,7 +68,7 @@ const Introduction = () => {
                 </div>
                 <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
                   {socialLinks.map((social) => {
-                    const Icon = social.icon;
+                    const Icon = getSocialIcon(social.icon);
                     return (
                       <a
                         key={social.label}
