@@ -17,7 +17,7 @@ const AnimatedTyping = ({ text, className = "" }: AnimatedTypingProps) => {
     setHasMounted(true);
   }, []);
 
-  const shouldAnimate = hasMounted && !prefersReducedMotion;
+  const shouldAnimate = hasMounted && prefersReducedMotion === false;
 
   return (
     <p className={className}>
@@ -29,7 +29,7 @@ const AnimatedTyping = ({ text, className = "" }: AnimatedTypingProps) => {
             duration: shouldAnimate ? 0.5 : 0,
             delay: shouldAnimate ? i / 10 : 0,
           }}
-          key={`${word}-${i}`}
+          key={`${word}-${i}-${shouldAnimate ? "animated" : "static"}`}
         >
           {word}
           {i < words.length - 1 ? " " : null}
