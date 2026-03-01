@@ -11,18 +11,14 @@ import {
 import GitHubIcon from "./icons/GitHubIcon";
 import AnimatedTyping from "./ui/AnimatedTyping";
 
-const getSocialIcon = (icon: SocialLinkIcon) => {
-  switch (icon) {
-    case "linkedin":
-      return Linkedin;
-    case "github":
-      return GitHubIcon;
-    case "email":
-      return Mail;
-    case "resume":
-      return FileText;
-  }
-};
+type SocialIconComponent = React.ComponentType<{ className?: string }>;
+
+const socialIconMap = {
+  linkedin: Linkedin,
+  github: GitHubIcon,
+  email: Mail,
+  resume: FileText,
+} satisfies Record<SocialLinkIcon, SocialIconComponent>;
 
 const Introduction = () => {
   return (
@@ -68,7 +64,7 @@ const Introduction = () => {
                 </div>
                 <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
                   {socialLinks.map((social) => {
-                    const Icon = getSocialIcon(social.icon);
+                    const Icon = socialIconMap[social.icon];
                     return (
                       <a
                         key={social.label}

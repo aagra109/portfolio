@@ -2,7 +2,13 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import React from "react";
-import { CloudCog, Code2, Database, Layers3 } from "lucide-react";
+import {
+  CloudCog,
+  Code2,
+  Database,
+  Layers3,
+  type LucideIcon,
+} from "lucide-react";
 import {
   skillGroups,
   skillsDescription,
@@ -13,18 +19,12 @@ import { Card, CardContent } from "./ui/card";
 const SKILL_CARD_VIEWPORT = { once: true, amount: 0.25 } as const;
 const SKILL_EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
-const getSkillGroupIcon = (icon: SkillGroupIcon) => {
-  switch (icon) {
-    case "code":
-      return Code2;
-    case "layers":
-      return Layers3;
-    case "cloud":
-      return CloudCog;
-    case "database":
-      return Database;
-  }
-};
+const skillGroupIconMap = {
+  code: Code2,
+  layers: Layers3,
+  cloud: CloudCog,
+  database: Database,
+} satisfies Record<SkillGroupIcon, LucideIcon>;
 
 const Skills = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -47,7 +47,7 @@ const Skills = () => {
 
       <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         {skillGroups.map((group, index) => {
-          const Icon = getSkillGroupIcon(group.icon);
+          const Icon = skillGroupIconMap[group.icon];
           return (
             <motion.div
               key={group.title}
