@@ -4,62 +4,47 @@
 
 @layer base {
   :root {
-    --background: 0 0% 96%;
-    --foreground: 0 0% 9%;
-    --card: 0 0% 98%;
-    --card-foreground: 0 0% 9%;
-    --popover: 0 0% 89%;
-    --popover-foreground: 0 0% 9%;
-    --primary: 20 90% 48%;
-    --primary-foreground: 33 100% 96%;
-    --secondary: 0 0% 32%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 63%;
-    --muted-foreground: 0 0% 9%;
-    --accent: 48 100% 96%;
-    --accent-foreground: 37 92% 50%;
+    --background: 0 0% 8%;
+    --foreground: 60 60% 94%;
+    --card: 0 0% 10%;
+    --card-foreground: 60 60% 94%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 60 60% 94%;
+    --primary: 14 100% 64%;
+    --primary-foreground: 0 0% 8%;
+    --secondary: 50 20% 78%;
+    --secondary-foreground: 0 0% 8%;
+    --muted: 45 7% 62%;
+    --muted-foreground: 50 19% 76%;
+    --accent: 48 42% 86%;
+    --accent-foreground: 0 0% 8%;
     --destructive: 0 72% 50%;
     --destructive-foreground: 0 87% 97%;
-    --border: 0 0% 83%;
-    --input: 0 0% 83%;
-    --ring: 20 90% 48%;
-    --radius: 0.5rem;
-    --chart-1: 27 95% 60%;
-    --chart-2: 43 96% 56%;
-    --chart-3: 47 95% 53%;
-    --chart-4: 24 94% 53%;
-    --chart-5: 0 0% 45%;
-  }
-
-  .dark {
-    --background: 220 15% 10%;
-    --foreground: 36 44% 95%;
-    --card: 220 16% 13%;
-    --card-foreground: 36 44% 95%;
-    --popover: 220 16% 15%;
-    --popover-foreground: 36 44% 95%;
-    --primary: 24 93% 61%;
-    --primary-foreground: 220 20% 12%;
-    --secondary: 218 12% 30%;
-    --secondary-foreground: 36 34% 92%;
-    --muted: 220 12% 22%;
-    --muted-foreground: 36 16% 72%;
-    --accent: 31 46% 20%;
-    --accent-foreground: 39 84% 72%;
-    --destructive: 0 78% 58%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 219 14% 24%;
-    --input: 219 14% 24%;
-    --ring: 24 93% 61%;
-    --chart-1: 25 92% 62%;
-    --chart-2: 44 94% 58%;
-    --chart-3: 34 90% 55%;
-    --chart-4: 12 86% 63%;
-    --chart-5: 212 18% 66%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 14 100% 64%;
+    --radius: 0.8rem;
+    --paper: 44 25% 82%;
+    --paper-foreground: 0 0% 8%;
+    --paper-card: 54 100% 96%;
+    --paper-border: 45 18% 73%;
+    --noise-orange: 14 100% 64%;
+    --noise-tan: 43 26% 78%;
+    --noise-cream: 60 60% 94%;
+    --hero-shadow: 14 100% 64%;
+    --chart-1: 14 100% 64%;
+    --chart-2: 48 42% 86%;
+    --chart-3: 60 60% 94%;
+    --chart-4: 44 25% 82%;
+    --chart-5: 45 7% 62%;
   }
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   * {
     @apply border-border;
   }
@@ -68,22 +53,97 @@
     @apply bg-background text-foreground antialiased;
     min-height: 100vh;
     font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
-    background-image: none;
+    background-color: hsl(var(--background));
+    background-image: radial-gradient(
+        circle at 14% 18%,
+        hsl(var(--noise-orange) / 0.16) 0 1px,
+        transparent 1.3px
+      ),
+      radial-gradient(
+        circle at 78% 24%,
+        hsl(var(--noise-tan) / 0.16) 0 1px,
+        transparent 1.4px
+      ),
+      radial-gradient(
+        circle at 42% 68%,
+        hsl(var(--noise-cream) / 0.12) 0 1px,
+        transparent 1.2px
+      ),
+      linear-gradient(180deg, hsl(var(--background)), hsl(var(--background)));
+    background-size:
+      180px 180px,
+      210px 210px,
+      240px 240px,
+      auto;
+    background-attachment: fixed;
   }
 
   ::selection {
-    background-color: hsl(var(--primary) / 0.28);
-    color: hsl(var(--foreground));
+    background-color: hsl(var(--primary) / 0.4);
+    color: hsl(var(--background));
   }
 
   h1,
   h2,
   h3,
   h4 {
-    font-family: "Gill Sans", "Trebuchet MS", "Avenir Next", sans-serif;
+    font-family: var(--font-space-grotesk), "Avenir Next", sans-serif;
   }
 
   .font-space-grotesk {
     font-family: var(--font-space-grotesk), "Avenir Next", sans-serif;
+  }
+}
+
+@layer utilities {
+  .hero-grain {
+    background-image: radial-gradient(
+        circle at 12% 24%,
+        hsl(var(--noise-orange) / 0.12) 0 1px,
+        transparent 1.3px
+      ),
+      radial-gradient(
+        circle at 72% 16%,
+        hsl(var(--noise-tan) / 0.12) 0 1px,
+        transparent 1.3px
+      ),
+      radial-gradient(
+        circle at 46% 74%,
+        hsl(var(--noise-cream) / 0.09) 0 1px,
+        transparent 1.2px
+      );
+    background-size:
+      150px 150px,
+      180px 180px,
+      220px 220px;
+  }
+
+  .paper-grain {
+    background-color: hsl(var(--paper));
+    background-image: radial-gradient(
+        circle at 18% 20%,
+        hsl(var(--primary) / 0.12) 0 1px,
+        transparent 1.3px
+      ),
+      radial-gradient(
+        circle at 74% 36%,
+        hsl(var(--noise-orange) / 0.1) 0 1px,
+        transparent 1.2px
+      ),
+      radial-gradient(
+        circle at 52% 70%,
+        hsl(var(--paper-foreground) / 0.08) 0 1px,
+        transparent 1.2px
+      );
+    background-size:
+      150px 150px,
+      200px 200px,
+      240px 240px;
+  }
+
+  .ticket-card {
+    background-color: hsl(var(--paper-card));
+    border: 1px solid hsl(var(--paper-border));
+    box-shadow: 0 6px 0 0 hsl(var(--paper-border) / 0.75);
   }
 }
