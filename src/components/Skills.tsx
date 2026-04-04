@@ -36,12 +36,12 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="mx-auto w-full max-w-6xl scroll-mt-24 px-6 pb-4 pt-8 sm:px-10"
+      className="mx-auto w-full max-w-6xl scroll-mt-28 px-6 pb-6 pt-8 sm:px-10"
     >
-      <h2 className="p-1 text-xs font-semibold uppercase tracking-widest text-primary sm:text-sm">
+      <h2 className="font-space-grotesk text-[rgb(255,113,69)] p-1 text-xs font-semibold uppercase tracking-[0.28em] sm:text-sm">
         Skills
       </h2>
-      <p className="mt-3 max-w-3xl p-1 text-base leading-relaxed text-muted-foreground sm:text-lg">
+      <p className="mt-3 max-w-3xl p-1 text-base leading-relaxed text-[#dad6c8] sm:text-lg">
         {skillsDescription}
       </p>
 
@@ -65,19 +65,17 @@ const Skills = () => {
                     }
               }
             >
-              <Card className="group relative isolate h-full overflow-hidden border-border/80 bg-card/95 transition-colors duration-300 hover:border-primary/45">
+              <Card className="group relative isolate h-full overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#151515]/95 shadow-[0_18px_50px_rgba(0,0,0,0.22)] transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(255,113,69,0.35)]">
                 <span
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                >
-                  <span className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-primary/10" />
-                </span>
+                  className="absolute inset-x-6 top-0 h-1 rounded-b-full bg-[#fefce1]/70"
+                />
                 <CardContent className="relative z-10 p-6 pt-6">
                   <div className="flex items-center gap-3">
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-primary/30 bg-primary/10 text-primary transition-transform duration-300 ease-out group-hover:-translate-y-0.5 group-hover:rotate-3 group-hover:scale-110 dark:border-accent-foreground/20 dark:bg-accent dark:text-accent-foreground">
+                    <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#d8cfbc] text-[#141414] transition-transform duration-300 ease-out group-hover:-translate-y-0.5 group-hover:rotate-3 group-hover:scale-110 group-hover:bg-[#fefce1]">
                       <Icon aria-hidden="true" className="h-5 w-5" />
                     </span>
-                    <h3 className="text-lg font-semibold text-foreground sm:text-xl">
+                    <h3 className="font-space-grotesk text-lg font-semibold text-[#fefce1] sm:text-xl">
                       {group.title}
                     </h3>
                   </div>
@@ -85,7 +83,7 @@ const Skills = () => {
                     {group.skills.map((skill) => (
                       <li
                         key={skill}
-                        className="text-sm font-medium text-foreground/90 sm:text-base"
+                        className="text-sm font-medium text-[#f7f2dd] sm:text-base"
                       >
                         {skill}
                       </li>

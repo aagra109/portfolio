@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/Header";
 import { spaceGrotesk } from "@/lib/fonts";
 import { seoConfig } from "@/lib/seo";
@@ -52,19 +51,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body className={spaceGrotesk.variable}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Header />
-          {children}
-          <SpeedInsights />
-          <Analytics />
-        </ThemeProvider>
+        <Header />
+        {children}
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
