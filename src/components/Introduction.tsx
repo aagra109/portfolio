@@ -37,29 +37,20 @@ const Introduction = () => {
             duration: 0.2,
           }}
         >
-          <h1 className="max-w-4xl p-1 font-space-grotesk text-5xl font-extrabold leading-[0.92] tracking-[-0.05em] text-[#fefce1] sm:text-6xl lg:text-[5.75rem]">
-            Ansh Agrawal
-          </h1>
+          <h1 className="hero-title">Ansh Agrawal</h1>
         </motion.div>
-        <AnimatedTyping
-          text={heroSubtitle}
-          className="relative max-w-3xl p-1 text-lg font-medium leading-relaxed text-[#dad6c8] sm:text-xl"
-        />
-        <div className="relative mt-4 rounded-[1.9rem] border border-white/10 bg-[#1a1a1a]/90 p-6 shadow-[0_18px_45px_rgba(0,0,0,0.24)] sm:p-8">
-          <h2 className="text-[rgb(255,113,69)] text-xs font-semibold uppercase tracking-[0.28em] sm:text-sm">
-            About
-          </h2>
-          <div className="max-w-4xl space-y-3 pt-4 text-left text-base font-medium leading-7 text-[#f7f2dd] sm:text-lg sm:leading-8">
+        <AnimatedTyping text={heroSubtitle} className="hero-subtitle" />
+        <div className="hero-panel">
+          <h2 className="section-kicker">About</h2>
+          <div className="hero-body-copy">
             {aboutParagraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
             <div className="pt-2">
-              <div className="rounded-[1.5rem] border border-white/10 bg-[#111111]/90 p-4 sm:p-5">
+              <div className="contact-panel">
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <h3 className="text-[rgb(255,113,69)] text-xs font-semibold uppercase tracking-[0.24em]">
-                    Connect
-                  </h3>
-                  <p className="text-xs font-medium text-[#dad6c8]">
+                  <h3 className="section-kicker">Connect</h3>
+                  <p className="contact-meta">
                     Open to exploring new opportunities
                   </p>
                 </div>
@@ -78,17 +69,15 @@ const Introduction = () => {
                             ? "noreferrer noopener"
                             : undefined
                         }
-                        className="group relative isolate flex items-center justify-between overflow-hidden rounded-2xl border border-white/10 bg-[#191919] px-3 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:border-[rgba(255,113,69,0.35)] hover:bg-[#171717]"
+                        className="social-link"
                       >
                         <span className="relative z-10 flex items-center gap-2">
-                          <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#d8cfbc] text-[#141414] transition-colors duration-200 group-hover:bg-[#fefce1]">
+                          <span className="social-link-icon">
                             <Icon className="h-4 w-4" />
                           </span>
-                          <span className="text-sm font-semibold text-[#fefce1]">
-                            {social.label}
-                          </span>
+                          <span className="social-link-text">{social.label}</span>
                         </span>
-                        <ArrowUpRight className="relative z-10 h-4 w-4 text-[#dad6c8] transition-colors group-hover:text-[rgb(255,113,69)]" />
+                        <ArrowUpRight className="social-link-arrow" />
                       </a>
                     );
                   })}
