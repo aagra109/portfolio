@@ -48,9 +48,11 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="paper-section relative mx-auto w-full max-w-6xl scroll-mt-28 px-6 pb-20 pt-8 sm:px-10"
+      className="relative mx-auto w-full max-w-6xl scroll-mt-28 px-6 pb-8 pt-8 text-black sm:px-10"
     >
-      <h2 className="section-kicker section-kicker-paper">Experience</h2>
+      <h2 className="p-1 font-space-grotesk text-sm font-semibold uppercase tracking-widest text-black sm:text-base">
+        Experience
+      </h2>
       <div className="mt-4 space-y-5">
         {experiences.map((exp, index) => (
           <motion.div
@@ -71,23 +73,23 @@ const Experience = () => {
             <Card className="ticket-card group relative isolate overflow-hidden transition-transform duration-300 hover:-translate-y-1">
               <CardContent className="relative z-10 grid gap-6 p-6 pt-6 md:grid-cols-12 md:gap-8">
                 <div className="space-y-3 md:col-span-8">
-                  <p className="experience-role">
+                  <p className="text-xl font-semibold text-black">
                     {exp.role},{" "}
                     <a
                       href={exp.companyUrl}
                       target="_blank"
                       rel="noreferrer noopener"
-                      className="experience-link"
+                      className="inline-flex text-base font-semibold text-primary transition-colors duration-200 hover:text-black md:text-lg"
                     >
                       <span className="relative">
                         {exp.company}
-                        <span className="experience-link-underline" />
+                        <span className="pointer-events-none absolute inset-x-0 -bottom-0.5 h-0.5 origin-left scale-x-75 bg-primary/50 transition-transform duration-200 group-hover:scale-x-100" />
                       </span>
                     </a>
                   </p>
                   <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
-                    <p className="experience-location">{exp.location}</p>
-                    <p className="experience-duration">{exp.duration}</p>
+                    <p className="text-stone-600">{exp.location}</p>
+                    <p className="font-medium text-black">{exp.duration}</p>
                   </div>
                   <motion.ul
                     className="space-y-2.5"
@@ -100,21 +102,23 @@ const Experience = () => {
                       <motion.li
                         key={`${exp.company}-${exp.duration}-${point}`}
                         variants={pointItemVariants}
-                        className="experience-point"
+                        className="flex items-start gap-3 text-sm leading-relaxed text-stone-800 sm:text-base"
                       >
-                        <span className="experience-bullet" />
+                        <span className="mt-2.5 inline-flex h-1.5 w-4 shrink-0 rounded-full bg-primary" />
                         <span>{point}</span>
                       </motion.li>
                     ))}
                   </motion.ul>
                 </div>
                 <div className="md:col-span-4">
-                  <p className="experience-stack-label">Tech Stack</p>
+                  <p className="text-xs font-semibold uppercase tracking-widest text-stone-600">
+                    Tech Stack
+                  </p>
                   <div className="mt-3 flex flex-wrap gap-2">
                     {exp.skills.map((skill) => (
                       <span
                         key={`${exp.company}-${exp.duration}-${skill}`}
-                        className="experience-pill"
+                        className="rounded-full border border-stone-300 bg-white/70 px-3 py-1 text-xs font-semibold text-black sm:text-sm"
                       >
                         {skill}
                       </span>

@@ -1,24 +1,14 @@
 "use client";
 import { motion } from "framer-motion";
-import { ArrowUpRight, FileText, Linkedin, Mail } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import React from "react";
 import {
   aboutParagraphs,
   heroSubtitle,
   socialLinks,
-  type SocialLinkIcon,
 } from "@/content/introduction";
-import GitHubIcon from "./icons/GitHubIcon";
+import { socialIconMap } from "./social-icons";
 import AnimatedTyping from "./ui/AnimatedTyping";
-
-type SocialIconComponent = React.ComponentType<{ className?: string }>;
-
-const socialIconMap = {
-  linkedin: Linkedin,
-  github: GitHubIcon,
-  email: Mail,
-  resume: FileText,
-} satisfies Record<SocialLinkIcon, SocialIconComponent>;
 
 const Introduction = () => {
   return (
@@ -37,20 +27,29 @@ const Introduction = () => {
             duration: 0.2,
           }}
         >
-          <h1 className="hero-title">Ansh Agrawal</h1>
+          <h1 className="max-w-4xl p-1 font-space-grotesk text-5xl font-extrabold leading-none tracking-tight text-foreground sm:text-6xl lg:text-8xl">
+            Ansh Agrawal
+          </h1>
         </motion.div>
-        <AnimatedTyping text={heroSubtitle} className="hero-subtitle" />
-        <div className="hero-panel">
-          <h2 className="section-kicker">About</h2>
-          <div className="hero-body-copy">
+        <AnimatedTyping
+          text={heroSubtitle}
+          className="relative max-w-3xl p-1 text-lg font-medium leading-relaxed text-stone-300 sm:text-xl"
+        />
+        <div className="relative mt-4 rounded-3xl border border-white/10 bg-neutral-950/90 p-6 shadow-2xl shadow-black/25 sm:p-8">
+          <h2 className="p-1 font-space-grotesk text-sm font-semibold uppercase tracking-widest text-primary sm:text-base">
+            About
+          </h2>
+          <div className="max-w-4xl space-y-3 pt-4 text-left text-base font-medium leading-7 text-stone-100 sm:text-lg sm:leading-8">
             {aboutParagraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
             <div className="pt-2">
-              <div className="contact-panel">
+              <div className="rounded-3xl border border-white/10 bg-black/90 p-4 sm:p-5">
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <h3 className="section-kicker">Connect</h3>
-                  <p className="contact-meta">
+                  <h3 className="p-1 font-space-grotesk text-sm font-semibold uppercase tracking-widest text-primary sm:text-base">
+                    Connect
+                  </h3>
+                  <p className="text-xs font-medium text-stone-300">
                     Open to exploring new opportunities
                   </p>
                 </div>
@@ -69,15 +68,17 @@ const Introduction = () => {
                             ? "noreferrer noopener"
                             : undefined
                         }
-                        className="social-link"
+                        className="group relative isolate flex items-center justify-between overflow-hidden rounded-2xl border border-white/10 bg-neutral-900 px-3 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-neutral-950"
                       >
                         <span className="relative z-10 flex items-center gap-2">
-                          <span className="social-link-icon">
+                          <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-stone-300 text-black transition-colors duration-200 group-hover:bg-stone-100">
                             <Icon className="h-4 w-4" />
                           </span>
-                          <span className="social-link-text">{social.label}</span>
+                          <span className="text-sm font-semibold text-white">
+                            {social.label}
+                          </span>
                         </span>
-                        <ArrowUpRight className="social-link-arrow" />
+                        <ArrowUpRight className="relative z-10 h-4 w-4 text-stone-300 transition-colors group-hover:text-primary" />
                       </a>
                     );
                   })}

@@ -36,10 +36,14 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="mx-auto w-full max-w-6xl scroll-mt-28 px-6 pb-6 pt-8 sm:px-10"
+      className="mx-auto w-full max-w-6xl scroll-mt-28 px-6 pb-6 pt-2 sm:px-10"
     >
-      <h2 className="section-kicker">Skills</h2>
-      <p className="section-copy">{skillsDescription}</p>
+      <h2 className="p-1 font-space-grotesk text-sm font-semibold uppercase tracking-widest text-primary sm:text-base">
+        Skills
+      </h2>
+      <p className="mt-3 max-w-3xl p-1 text-base leading-relaxed text-stone-300 sm:text-lg">
+        {skillsDescription}
+      </p>
 
       <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         {skillGroups.map((group, index) => {
@@ -61,18 +65,26 @@ const Skills = () => {
                     }
               }
             >
-              <Card className="skill-card">
-                <span aria-hidden="true" className="skill-card-topline" />
+              <Card className="relative isolate h-full overflow-hidden rounded-3xl border border-white/10 bg-neutral-900/95 shadow-2xl shadow-black/20 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40">
+                <span
+                  aria-hidden="true"
+                  className="absolute inset-x-6 top-0 h-1 rounded-b-full bg-white/70"
+                />
                 <CardContent className="relative z-10 p-6 pt-6">
                   <div className="flex items-center gap-3">
-                    <span className="skill-card-icon">
+                    <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-stone-300 text-black transition-all duration-300 ease-out group-hover:-translate-y-0.5 group-hover:rotate-3 group-hover:scale-110 group-hover:bg-stone-100">
                       <Icon aria-hidden="true" className="h-5 w-5" />
                     </span>
-                    <h3 className="skill-card-title">{group.title}</h3>
+                    <h3 className="font-space-grotesk text-lg font-semibold text-white sm:text-xl">
+                      {group.title}
+                    </h3>
                   </div>
                   <ul className="mt-5 space-y-2.5">
                     {group.skills.map((skill) => (
-                      <li key={skill} className="skill-item">
+                      <li
+                        key={skill}
+                        className="text-sm font-medium text-stone-100 sm:text-base"
+                      >
                         {skill}
                       </li>
                     ))}

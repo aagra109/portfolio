@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { spaceGrotesk } from "@/lib/fonts";
 import { seoConfig } from "@/lib/seo";
@@ -55,6 +56,7 @@ export default function RootLayout({
       <body className={spaceGrotesk.variable}>
         <Header />
         {children}
+        <Footer />
         <SpeedInsights />
         <Analytics />
       </body>

@@ -47,7 +47,7 @@ const Page = () => {
   );
 
   return (
-    <main className="relative overflow-x-clip pb-12">
+    <main className="relative overflow-x-clip pb-2">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: structuredData }}
