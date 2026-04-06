@@ -1,33 +1,24 @@
 "use client";
 import { motion } from "framer-motion";
-import { ArrowUpRight, FileText, Linkedin, Mail } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import React from "react";
 import {
   aboutParagraphs,
   heroSubtitle,
   socialLinks,
-  type SocialLinkIcon,
 } from "@/content/introduction";
-import GitHubIcon from "./icons/GitHubIcon";
+import { socialIconMap } from "./social-icons";
 import AnimatedTyping from "./ui/AnimatedTyping";
-
-type SocialIconComponent = React.ComponentType<{ className?: string }>;
-
-const socialIconMap = {
-  linkedin: Linkedin,
-  github: GitHubIcon,
-  email: Mail,
-  resume: FileText,
-} satisfies Record<SocialLinkIcon, SocialIconComponent>;
 
 const Introduction = () => {
   return (
     <section
       id="about"
-      className="relative mx-auto w-full max-w-5xl scroll-mt-24 px-6 pb-14 pt-20 sm:px-10"
+      className="relative mx-auto w-full max-w-5xl scroll-mt-28 px-6 pb-14 pt-24 sm:px-10 sm:pt-28"
     >
-      <div className="relative space-y-4">
+      <div className="hero-grain relative px-0 py-2 sm:py-4">
         <motion.div
+          className="relative"
           initial={{ x: "-100vw", scale: 0 }}
           animate={{ x: 0, scale: 1 }}
           transition={{
@@ -36,29 +27,29 @@ const Introduction = () => {
             duration: 0.2,
           }}
         >
-          <h1 className="p-1 font-space-grotesk font-extrabold text-5xl text-foreground sm:text-6xl">
+          <h1 className="max-w-4xl p-1 font-space-grotesk text-5xl font-extrabold leading-none tracking-tight text-foreground sm:text-6xl lg:text-8xl">
             Ansh Agrawal
           </h1>
         </motion.div>
         <AnimatedTyping
           text={heroSubtitle}
-          className="max-w-4xl p-1 text-lg font-medium leading-relaxed text-muted-foreground sm:text-xl"
+          className="relative max-w-3xl p-1 text-lg font-medium leading-relaxed text-stone-300 sm:text-xl"
         />
-        <div className="mt-4 rounded-2xl border border-border/80 bg-card/95 p-6 shadow-sm shadow-primary/10 sm:p-8">
-          <h2 className="text-xs font-semibold uppercase tracking-widest text-primary sm:text-sm">
+        <div className="relative mt-4 rounded-3xl border border-white/10 bg-neutral-950/90 p-6 shadow-2xl shadow-black/25 sm:p-8">
+          <h2 className="p-1 font-space-grotesk text-sm font-semibold uppercase tracking-widest text-primary sm:text-base">
             About
           </h2>
-          <div className="max-w-4xl space-y-3 pt-4 text-left text-base font-medium leading-7 text-foreground/90 sm:text-lg sm:leading-8">
+          <div className="max-w-4xl space-y-3 pt-4 text-left text-base font-medium leading-7 text-stone-100 sm:text-lg sm:leading-8">
             {aboutParagraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
             <div className="pt-2">
-              <div className="rounded-xl border border-border/70 bg-background/80 p-4 sm:p-5">
+              <div className="rounded-3xl border border-white/10 bg-black/90 p-4 sm:p-5">
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <h3 className="text-xs font-semibold uppercase tracking-widest text-primary">
+                  <h3 className="p-1 font-space-grotesk text-sm font-semibold uppercase tracking-widest text-primary sm:text-base">
                     Connect
                   </h3>
-                  <p className="text-xs font-medium text-muted-foreground">
+                  <p className="text-xs font-medium text-stone-300">
                     Open to exploring new opportunities
                   </p>
                 </div>
@@ -77,23 +68,17 @@ const Introduction = () => {
                             ? "noreferrer noopener"
                             : undefined
                         }
-                        className="group relative isolate flex items-center justify-between overflow-hidden rounded-lg border border-border bg-card px-3 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+                        className="group relative isolate flex items-center justify-between overflow-hidden rounded-2xl border border-white/10 bg-neutral-900 px-3 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-neutral-950"
                       >
-                        <span
-                          aria-hidden="true"
-                          className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                        >
-                          <span className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-primary/10" />
-                        </span>
                         <span className="relative z-10 flex items-center gap-2">
-                          <span className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-primary/30 bg-primary/10 text-primary dark:border-accent-foreground/20 dark:bg-accent dark:text-accent-foreground">
+                          <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-stone-300 text-black transition-colors duration-200 group-hover:bg-stone-100">
                             <Icon className="h-4 w-4" />
                           </span>
-                          <span className="text-sm font-semibold text-foreground">
+                          <span className="text-sm font-semibold text-white">
                             {social.label}
                           </span>
                         </span>
-                        <ArrowUpRight className="relative z-10 h-4 w-4 text-muted-foreground transition-colors group-hover:text-primary" />
+                        <ArrowUpRight className="relative z-10 h-4 w-4 text-stone-300 transition-colors group-hover:text-primary" />
                       </a>
                     );
                   })}
