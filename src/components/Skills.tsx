@@ -65,7 +65,7 @@ const Skills = () => {
                     }
               }
             >
-              <Card className="relative isolate h-full overflow-hidden rounded-3xl border border-white/10 bg-neutral-900/95 shadow-2xl shadow-black/20 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40">
+              <Card className="group relative isolate h-full overflow-hidden rounded-3xl border border-white/10 bg-neutral-900/95 shadow-2xl shadow-black/20 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40">
                 <span
                   aria-hidden="true"
                   className="absolute inset-x-6 top-0 h-1 rounded-b-full bg-white/70"
