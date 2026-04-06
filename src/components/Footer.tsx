@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="flex h-14 items-center px-6 sm:px-10">
       <div className="mx-auto flex h-full w-full max-w-6xl items-center justify-center">
-        <div
+        <nav
           className="flex items-center justify-center gap-3"
           aria-label="Social links"
         >
@@ -29,7 +29,7 @@ export default function Footer() {
                 </a>
               );
             })}
-        </div>
+        </nav>
       </div>
     </footer>
   );
