@@ -14,7 +14,7 @@ export default function SectionDivider({ className }: SectionDividerProps) {
       viewBox="0 0 1200 120"
       preserveAspectRatio="none"
       fill="currentColor"
-      className={cn("section-divider", className)}
+      className={cn("text-black", className)}
     >
       <path d={SECTION_DIVIDER_PATH} />
     </svg>

@@ -30,8 +30,8 @@ const Skills = () => {
   const shouldReduceMotion = useReducedMotion();
 
   const cardInitial = shouldReduceMotion
-    ? { opacity: 1, y: 0, filter: "blur(0px)" }
-    : { opacity: 0, y: 20, filter: "blur(3px)" };
+    ? { opacity: 1, scale: 1 }
+    : { opacity: 0, scale: 0.98 };
 
   return (
     <section
@@ -53,7 +53,7 @@ const Skills = () => {
               key={group.title}
               className="h-full"
               initial={cardInitial}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={SKILL_CARD_VIEWPORT}
               transition={
                 shouldReduceMotion

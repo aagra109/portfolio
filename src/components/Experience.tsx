@@ -13,8 +13,8 @@ const Experience = () => {
   const shouldReduceMotion = useReducedMotion();
 
   const cardInitial = shouldReduceMotion
-    ? { opacity: 1, y: 0, filter: "blur(0px)" }
-    : { opacity: 0, y: 24, filter: "blur(4px)" };
+    ? { opacity: 1, scale: 1 }
+    : { opacity: 0, scale: 0.985 };
 
   const pointListVariants = shouldReduceMotion
     ? {
@@ -33,14 +33,14 @@ const Experience = () => {
 
   const pointItemVariants = shouldReduceMotion
     ? {
-        hidden: { opacity: 1, y: 0 },
-        show: { opacity: 1, y: 0, transition: { duration: 0 } },
+        hidden: { opacity: 1, scale: 1 },
+        show: { opacity: 1, scale: 1, transition: { duration: 0 } },
       }
     : {
-        hidden: { opacity: 0, y: 8 },
+        hidden: { opacity: 0, scale: 0.985 },
         show: {
           opacity: 1,
-          y: 0,
+          scale: 1,
           transition: { duration: 0.3, ease: MOTION_EASE },
         },
       };
@@ -58,7 +58,7 @@ const Experience = () => {
           <motion.div
             key={`${exp.company}-${exp.duration}`}
             initial={cardInitial}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={CARD_VIEWPORT}
             transition={
               shouldReduceMotion
@@ -70,7 +70,7 @@ const Experience = () => {
                   }
             }
           >
-            <Card className="ticket-card group relative isolate overflow-hidden transition-transform duration-300 hover:-translate-y-1">
+            <Card className="group relative isolate overflow-hidden rounded-3xl border border-stone-300 bg-amber-50/95 shadow-md shadow-stone-400/40 transition-transform duration-300 hover:-translate-y-1">
               <CardContent className="relative z-10 grid gap-6 p-6 pt-6 md:grid-cols-12 md:gap-8">
                 <div className="space-y-3 md:col-span-8">
                   <p className="text-xl font-semibold text-black">

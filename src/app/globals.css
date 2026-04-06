@@ -23,7 +23,6 @@
     --border: 0 0% 18%;
     --input: 0 0% 18%;
     --ring: 14 100% 64%;
-    --radius: 0.8rem;
     --paper: 44 25% 82%;
     --paper-foreground: 0 0% 8%;
     --paper-card: 54 100% 96%;
@@ -38,12 +37,10 @@
     --surface-copy: 46 58% 92%;
     --surface-copy-muted: 50 19% 76%;
     --surface-icon: 43 26% 78%;
-    --surface-shadow: 0 0% 0%;
     --paper-tag: 49 100% 95%;
     --noise-orange: 14 100% 64%;
     --noise-tan: 43 26% 78%;
     --noise-cream: 60 60% 94%;
-    --hero-shadow: 14 100% 64%;
     --chart-1: 14 100% 64%;
     --chart-2: 48 42% 86%;
     --chart-3: 60 60% 94%;
@@ -87,10 +84,6 @@
 }
 
 @layer utilities {
-  .section-divider {
-    color: hsl(var(--paper-foreground));
-  }
-
   .hero-grain {
     background-image: radial-gradient(
         circle at 12% 24%,
@@ -134,12 +127,5 @@
       150px 150px,
       200px 200px,
       240px 240px;
-  }
-
-  .ticket-card {
-    background-color: hsl(var(--paper-card));
-    border: 1px solid hsl(var(--paper-border));
-    border-radius: 1.5rem;
-    box-shadow: 0 6px 0 0 hsl(var(--paper-border) / 0.75);
   }
 }
