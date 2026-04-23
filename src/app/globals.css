@@ -1,6 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
 
 @layer base {
   :root {
@@ -91,7 +90,8 @@
 
 @layer utilities {
   .hero-grain {
-    background-image: radial-gradient(
+    background-image:
+      radial-gradient(
         circle at 12% 24%,
         hsl(var(--noise-orange) / 0.12) 0 1px,
         transparent 1.3px
@@ -114,7 +114,8 @@
 
   .paper-grain {
     background-color: hsl(var(--paper));
-    background-image: radial-gradient(
+    background-image:
+      radial-gradient(
         circle at 18% 20%,
         hsl(var(--primary) / 0.12) 0 1px,
         transparent 1.3px

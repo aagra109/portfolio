@@ -55,7 +55,7 @@ const Page = () => {
       <Introduction />
       <Skills />
       <div className="relative mt-8 overflow-x-clip pt-6">
-        <SectionDivider className="pointer-events-none absolute inset-x-0 top-0 z-10 h-6 w-full" />
+        <SectionDivider className="pointer-events-none absolute inset-x-0 top-0 z-10 h-5 w-full" />
         <div
           aria-hidden="true"
           className="paper-grain pointer-events-none absolute inset-x-0 top-0 bottom-0"
