@@ -10,14 +10,17 @@ type AnimatedTypingProps = {
 
 const AnimatedTyping = ({ text, className = "" }: AnimatedTypingProps) => {
   const prefersReducedMotion = useReducedMotion();
-  const [hasMounted, setHasMounted] = React.useState(false);
+  const [canAnimate, setCanAnimate] = React.useState(false);
   const words = text.trim().split(/\s+/).filter(Boolean);
+  const shouldAnimate = canAnimate && prefersReducedMotion === false;
 
   React.useEffect(() => {
-    setHasMounted(true);
-  }, []);
+    const animationFrame = window.requestAnimationFrame(() => {
+      setCanAnimate(true);
+    });
 
-  const shouldAnimate = hasMounted && prefersReducedMotion === false;
+    return () => window.cancelAnimationFrame(animationFrame);
+  }, []);
 
   return (
     <p className={className}>
