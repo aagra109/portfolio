@@ -1,6 +1,5 @@
 import Experience from "@/components/Experience";
 import Introduction from "@/components/Introduction";
-import SectionDivider from "@/components/SectionDivider";
 import Skills from "@/components/Skills";
 import { seoConfig } from "@/lib/seo";
 import React from "react";
@@ -54,14 +53,7 @@ const Page = () => {
       />
       <Introduction />
       <Skills />
-      <div className="relative mt-8 overflow-x-clip pt-6">
-        <SectionDivider className="pointer-events-none absolute inset-x-0 top-0 z-10 h-5 w-full" />
-        <div
-          aria-hidden="true"
-          className="paper-grain pointer-events-none absolute inset-x-0 top-0 bottom-0"
-        />
-        <Experience />
-      </div>
+      <Experience />
     </main>
   );
 };

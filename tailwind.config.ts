@@ -52,11 +52,28 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        paper: {
+          DEFAULT: "hsl(var(--paper))",
+          card: "hsl(var(--paper-card))",
+          border: "hsl(var(--paper-border))",
+          muted: "hsl(var(--paper-muted))",
+          copy: "hsl(var(--paper-copy))",
+        },
+        terracotta: "hsl(var(--terracotta))",
+        "ink-deep": {
+          DEFAULT: "hsl(var(--ink-deep))",
+          card: "hsl(var(--ink-deep-card))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      boxShadow: {
+        card: "0 4px 14px -4px rgba(8, 12, 18, 0.35)",
+        "card-hover":
+          "0 26px 55px -10px rgba(8, 12, 18, 0.65), 0 6px 14px -6px rgba(8, 12, 18, 0.4)",
       },
     },
   },
