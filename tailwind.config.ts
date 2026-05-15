@@ -52,14 +52,10 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        paper: {
-          DEFAULT: "hsl(var(--paper))",
-          card: "hsl(var(--paper-card))",
-          border: "hsl(var(--paper-border))",
-          muted: "hsl(var(--paper-muted))",
-          copy: "hsl(var(--paper-copy))",
+        terracotta: {
+          DEFAULT: "hsl(var(--terracotta))",
+          bright: "hsl(var(--terracotta-bright))",
         },
-        terracotta: "hsl(var(--terracotta))",
         "ink-deep": {
           DEFAULT: "hsl(var(--ink-deep))",
           card: "hsl(var(--ink-deep-card))",
