@@ -23,11 +23,6 @@
     --border: 0 0% 18%;
     --input: 0 0% 18%;
     --ring: 14 100% 64%;
-    --paper: 44 25% 82%;
-    --paper-card: 54 100% 96%;
-    --paper-border: 45 18% 73%;
-    --paper-muted: 45 8% 35%;
-    --paper-copy: 45 10% 17%;
     --surface-border: 0 0% 100%;
     --surface-panel: 0 0% 10%;
     --surface-panel-strong: 0 0% 7%;
@@ -36,8 +31,9 @@
     --surface-copy: 46 58% 92%;
     --surface-copy-muted: 50 19% 76%;
     --surface-icon: 43 26% 78%;
-    --terracotta: 12 75% 36%;
-    --ink-deep: 207 25% 19%;
+    --terracotta: 14 80% 48%;
+    --terracotta-bright: 11 82% 65%;
+    --ink-deep: 202 26% 16%;
     --ink-deep-card: 36 33% 91%;
     --noise-orange: 14 100% 64%;
     --noise-tan: 43 26% 78%;
@@ -112,5 +108,17 @@
       150px 150px,
       180px 180px,
       220px 220px;
+  }
+
+  .experience-surface {
+    background-color: hsl(var(--ink-deep));
+    background-image:
+      linear-gradient(to bottom, hsl(0 0% 0%), transparent 110px),
+      linear-gradient(to top, hsl(0 0% 0%), transparent 110px),
+      radial-gradient(
+        circle at top right,
+        hsl(var(--terracotta) / 0.1),
+        transparent 45%
+      );
   }
 }
