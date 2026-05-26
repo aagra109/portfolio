@@ -52,6 +52,13 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        "surface-panel": "hsl(var(--surface-panel))",
+        "surface-panel-strong": "hsl(var(--surface-panel-strong))",
+        "surface-panel-muted": "hsl(var(--surface-panel-muted))",
+        "surface-panel-hover": "hsl(var(--surface-panel-hover))",
+        "surface-copy": "hsl(var(--surface-copy))",
+        "surface-copy-muted": "hsl(var(--surface-copy-muted))",
+        "surface-icon": "hsl(var(--surface-icon))",
         terracotta: {
           DEFAULT: "hsl(var(--terracotta))",
           bright: "hsl(var(--terracotta-bright))",

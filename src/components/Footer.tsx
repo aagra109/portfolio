@@ -21,7 +21,7 @@ export default function Footer() {
                   href={social.href}
                   target={isExternal ? "_blank" : undefined}
                   rel={isExternal ? "noreferrer noopener" : undefined}
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full text-stone-400 transition-colors duration-200 hover:text-white"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full text-foreground/60 transition-colors duration-200 hover:bg-foreground/5 hover:text-foreground"
                   aria-label={social.label}
                   title={social.label}
                 >

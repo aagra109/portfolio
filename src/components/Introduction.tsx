@@ -33,23 +33,23 @@ const Introduction = () => {
         </motion.div>
         <AnimatedTyping
           text={heroSubtitle}
-          className="relative max-w-3xl p-1 text-lg font-medium leading-relaxed text-stone-300 sm:text-xl"
+          className="relative max-w-3xl p-1 text-lg font-medium leading-relaxed text-foreground sm:text-xl"
         />
-        <div className="relative mt-4 rounded-3xl border border-white/10 bg-neutral-950/90 p-6 shadow-2xl shadow-black/25 sm:p-8">
+        <div className="relative mt-6 rounded-lg border border-foreground/15 bg-background p-6 sm:p-8">
           <h2 className="p-1 font-space-grotesk text-sm font-semibold uppercase tracking-widest text-primary sm:text-base">
             About
           </h2>
-          <div className="max-w-4xl space-y-3 pt-4 text-left text-base font-medium leading-7 text-stone-100 sm:text-lg sm:leading-8">
+          <div className="max-w-4xl space-y-3 pt-4 text-left text-base font-medium leading-7 text-foreground sm:text-lg sm:leading-8">
             {aboutParagraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
             <div className="pt-2">
-              <div className="rounded-3xl border border-white/10 bg-black/90 p-4 sm:p-5">
+              <div className="rounded-lg border border-foreground/15 bg-background p-4 sm:p-5">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <h3 className="p-1 font-space-grotesk text-sm font-semibold uppercase tracking-widest text-primary sm:text-base">
                     Connect
                   </h3>
-                  <p className="text-xs font-medium text-stone-300">
+                  <p className="text-xs font-medium text-foreground/70">
                     Open to exploring new opportunities
                   </p>
                 </div>
@@ -68,17 +68,17 @@ const Introduction = () => {
                             ? "noreferrer noopener"
                             : undefined
                         }
-                        className="group relative isolate flex items-center justify-between overflow-hidden rounded-2xl border border-white/10 bg-neutral-900 px-3 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-neutral-950"
+                        className="group relative isolate flex items-center justify-between overflow-hidden rounded-lg border border-foreground/15 bg-background px-3 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/45 hover:bg-foreground/5"
                       >
                         <span className="relative z-10 flex items-center gap-2">
-                          <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-stone-300 text-black transition-colors duration-200 group-hover:bg-stone-100">
+                          <span className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-foreground text-background transition-colors duration-200 group-hover:bg-primary group-hover:text-primary-foreground">
                             <Icon className="h-4 w-4" />
                           </span>
-                          <span className="text-sm font-semibold text-white">
+                          <span className="text-sm font-semibold text-foreground">
                             {social.label}
                           </span>
                         </span>
-                        <ArrowUpRight className="relative z-10 h-4 w-4 text-stone-300 transition-colors group-hover:text-primary" />
+                        <ArrowUpRight className="relative z-10 h-4 w-4 text-foreground/60 transition-colors group-hover:text-primary" />
                       </a>
                     );
                   })}

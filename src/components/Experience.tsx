@@ -59,7 +59,7 @@ const Experience = () => {
           {experiences.map((exp, index) => (
             <motion.article
               key={`${exp.company}-${exp.duration}`}
-              className="rounded-2xl border border-ink-deep-card/15 bg-ink-deep-card/[0.06] p-5 shadow-card backdrop-blur-xl transition-[background-color,box-shadow] duration-300 hover:bg-ink-deep-card/[0.1] hover:shadow-card-hover sm:p-6"
+              className="rounded-2xl border border-ink-deep-card/10 bg-surface-panel-muted p-5 transition-colors duration-300 hover:bg-surface-panel-hover sm:p-6"
               initial={rowInitial}
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={
@@ -81,8 +81,8 @@ const Experience = () => {
                     }
               }
             >
-              <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_16rem] lg:gap-8">
-                <div>
+              <div className="grid gap-5 lg:grid-cols-4 lg:gap-8">
+                <div className="lg:col-span-3">
                   <h3 className="font-space-grotesk text-lg font-semibold leading-snug tracking-tight text-ink-deep-card sm:text-xl">
                     {exp.role},{" "}
                     <a
@@ -124,11 +124,11 @@ const Experience = () => {
                       <motion.li
                         key={`${exp.company}-${exp.duration}-${pointIndex}`}
                         variants={pointItemVariants}
-                        className="grid grid-cols-[1rem_1fr] gap-2.5 text-sm font-medium leading-6 text-ink-deep-card/90"
+                        className="flex items-start gap-2.5 text-sm font-medium leading-6 text-ink-deep-card/90"
                       >
                         <span
                           aria-hidden="true"
-                          className="mt-[10px] h-[3px] w-3 rounded-full bg-terracotta"
+                          className="mt-2.5 h-0.5 w-3 shrink-0 rounded-full bg-terracotta"
                         />
                         <span>{point}</span>
                       </motion.li>
@@ -144,7 +144,7 @@ const Experience = () => {
                     {exp.skills.map((skill, skillIndex) => (
                       <span
                         key={`${exp.company}-${exp.duration}-${skillIndex}`}
-                        className="rounded-full border border-ink-deep-card/15 bg-ink-deep-card/[0.05] px-2.5 py-1 font-space-grotesk text-xs font-semibold tracking-tight text-ink-deep-card"
+                        className="rounded-full border border-ink-deep-card/15 bg-ink-deep-card/[0.04] px-2.5 py-1 font-space-grotesk text-xs font-semibold tracking-tight text-ink-deep-card"
                       >
                         {skill}
                       </span>

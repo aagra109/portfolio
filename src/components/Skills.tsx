@@ -41,7 +41,7 @@ const Skills = () => {
       <h2 className="p-1 font-space-grotesk text-sm font-semibold uppercase tracking-widest text-primary sm:text-base">
         Skills
       </h2>
-      <p className="mt-3 max-w-3xl p-1 text-base leading-relaxed text-stone-300 sm:text-lg">
+      <p className="mt-3 max-w-3xl p-1 text-base font-medium leading-7 text-foreground sm:text-lg sm:leading-8">
         {skillsDescription}
       </p>
 
