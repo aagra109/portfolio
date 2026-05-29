@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import React from "react";
 import {
   CloudCog,
   Code2,
@@ -41,7 +40,7 @@ const Skills = () => {
       <h2 className="p-1 font-space-grotesk text-sm font-semibold uppercase tracking-widest text-primary sm:text-base">
         Skills
       </h2>
-      <p className="mt-3 max-w-3xl p-1 text-base leading-relaxed text-stone-300 sm:text-lg">
+      <p className="mt-3 max-w-3xl p-1 text-base font-medium leading-7 text-foreground sm:text-lg sm:leading-8">
         {skillsDescription}
       </p>
 
@@ -65,7 +64,7 @@ const Skills = () => {
                     }
               }
             >
-              <Card className="group relative isolate h-full overflow-hidden rounded-3xl border border-white/10 bg-neutral-900/95 shadow-2xl shadow-black/20 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40">
+              <Card className="group relative isolate h-full overflow-hidden rounded-3xl border border-white/10 bg-stone-900/95 shadow-2xl shadow-black/20 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40">
                 <span
                   aria-hidden="true"
                   className="absolute inset-x-6 top-0 h-1 rounded-b-full bg-white/70"

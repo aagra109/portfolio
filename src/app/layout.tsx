@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: seoConfig.siteName,
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: seoConfig.title,
     description: seoConfig.description,
   },

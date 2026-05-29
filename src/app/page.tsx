@@ -2,7 +2,6 @@ import Experience from "@/components/Experience";
 import Introduction from "@/components/Introduction";
 import Skills from "@/components/Skills";
 import { seoConfig } from "@/lib/seo";
-import React from "react";
 
 const Page = () => {
   const personSchema = {
