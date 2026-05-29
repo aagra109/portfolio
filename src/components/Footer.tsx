@@ -1,4 +1,5 @@
 import { socialLinks } from "@/content/introduction";
+import { externalLinkProps } from "@/lib/utils";
 import { socialIconMap } from "./social-icons";
 
 export default function Footer() {
@@ -13,14 +14,12 @@ export default function Footer() {
             .filter((social) => social.icon !== "resume")
             .map((social) => {
               const Icon = socialIconMap[social.icon];
-              const isExternal = social.href.startsWith("http");
 
               return (
                 <a
                   key={social.label}
                   href={social.href}
-                  target={isExternal ? "_blank" : undefined}
-                  rel={isExternal ? "noreferrer noopener" : undefined}
+                  {...externalLinkProps(social.href)}
                   className="inline-flex h-10 w-10 items-center justify-center rounded-full text-foreground/60 transition-colors duration-200 hover:bg-foreground/5 hover:text-foreground"
                   aria-label={social.label}
                   title={social.label}

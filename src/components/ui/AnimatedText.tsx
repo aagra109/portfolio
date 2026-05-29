@@ -1,20 +1,20 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import React from "react";
+import { useEffect, useState } from "react";
 
-type AnimatedTypingProps = {
+type AnimatedTextProps = {
   text: string;
   className?: string;
 };
 
-const AnimatedTyping = ({ text, className = "" }: AnimatedTypingProps) => {
+const AnimatedText = ({ text, className = "" }: AnimatedTextProps) => {
   const prefersReducedMotion = useReducedMotion();
-  const [canAnimate, setCanAnimate] = React.useState(false);
+  const [canAnimate, setCanAnimate] = useState(false);
   const words = text.trim().split(/\s+/).filter(Boolean);
   const shouldAnimate = canAnimate && prefersReducedMotion === false;
 
-  React.useEffect(() => {
+  useEffect(() => {
     const animationFrame = window.requestAnimationFrame(() => {
       setCanAnimate(true);
     });
@@ -42,4 +42,4 @@ const AnimatedTyping = ({ text, className = "" }: AnimatedTypingProps) => {
   );
 };
 
-export default AnimatedTyping;
+export default AnimatedText;

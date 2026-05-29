@@ -1,14 +1,14 @@
 "use client";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import React from "react";
 import {
   aboutParagraphs,
   heroSubtitle,
   socialLinks,
 } from "@/content/introduction";
+import { externalLinkProps } from "@/lib/utils";
 import { socialIconMap } from "./social-icons";
-import AnimatedTyping from "./ui/AnimatedTyping";
+import AnimatedText from "./ui/AnimatedText";
 
 const Introduction = () => {
   return (
@@ -31,7 +31,7 @@ const Introduction = () => {
             Ansh Agrawal
           </h1>
         </motion.div>
-        <AnimatedTyping
+        <AnimatedText
           text={heroSubtitle}
           className="relative max-w-3xl p-1 text-lg font-medium leading-relaxed text-foreground sm:text-xl"
         />
@@ -60,15 +60,8 @@ const Introduction = () => {
                       <a
                         key={social.label}
                         href={social.href}
-                        target={
-                          social.href.startsWith("http") ? "_blank" : undefined
-                        }
-                        rel={
-                          social.href.startsWith("http")
-                            ? "noreferrer noopener"
-                            : undefined
-                        }
-                        className="group relative isolate flex items-center justify-between overflow-hidden rounded-lg border border-foreground/15 bg-background px-3 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/45 hover:bg-foreground/5"
+                        {...externalLinkProps(social.href)}
+                        className="group relative isolate flex items-center justify-between rounded-md border-x border-t border-b-2 border-foreground/25 bg-background px-3 py-3 transition-all duration-200 hover:border-b hover:border-primary hover:bg-foreground/[0.03] hover:shadow-[inset_0_1px_3px_rgb(0_0_0/0.08)]"
                       >
                         <span className="relative z-10 flex items-center gap-2">
                           <span className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-foreground text-background transition-colors duration-200 group-hover:bg-primary group-hover:text-primary-foreground">

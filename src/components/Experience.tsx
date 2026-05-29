@@ -2,7 +2,6 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import React from "react";
 import { experiences } from "@/content/experience";
 
 const ROW_VIEWPORT = { once: true, amount: 0.2 } as const;
@@ -59,7 +58,7 @@ const Experience = () => {
           {experiences.map((exp, index) => (
             <motion.article
               key={`${exp.company}-${exp.duration}`}
-              className="rounded-2xl border border-ink-deep-card/10 bg-surface-panel-muted p-5 transition-colors duration-300 hover:bg-surface-panel-hover sm:p-6"
+              className="rounded-2xl border border-ink-deep-card/10 bg-stone-900 p-5 transition-colors duration-300  hover:bg-stone-800 sm:p-6"
               initial={rowInitial}
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={

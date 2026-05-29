@@ -4,45 +4,21 @@
 
 @layer base {
   :root {
-    --background: 60 7% 97.9%;
-    --foreground: 12 7% 15.1%;
+    --background: 60 9% 98%;
+    --foreground: 24 10% 10%;
     --card: 24 10% 10%;
-    --card-foreground: 60 7% 97.9%;
-    --popover: 24 10% 10%;
-    --popover-foreground: 60 7% 97.9%;
-    --primary: 14 100% 64%;
-    --primary-foreground: 0 0% 8%;
-    --secondary: 50 20% 78%;
-    --secondary-foreground: 0 0% 8%;
-    --muted: 45 7% 62%;
-    --muted-foreground: 50 19% 76%;
-    --accent: 48 42% 86%;
-    --accent-foreground: 0 0% 8%;
-    --destructive: 0 72% 50%;
-    --destructive-foreground: 0 87% 97%;
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
-    --ring: 14 100% 64%;
-    --surface-border: 0 0% 100%;
-    --surface-panel: 24 10% 10%;
-    --surface-panel-strong: 24 10% 10%;
-    --surface-panel-muted: 12 7% 15.1%;
-    --surface-panel-hover: 12 7% 17%;
-    --surface-copy: 60 7% 97.9%;
-    --surface-copy-muted: 50 19% 76%;
-    --surface-icon: 43 26% 78%;
-    --terracotta: 14 80% 48%;
-    --terracotta-bright: 11 82% 65%;
+    --card-foreground: 60 9% 98%;
+    --primary: 26 100% 50%;
+    --primary-foreground: 60 9% 98%;
+    --border: 24 6% 83%;
+    --radius: 0.5rem;
+    --terracotta: var(--primary);
+    --terracotta-bright: 37 80% 64%;
     --ink-deep: 24 10% 10%;
-    --ink-deep-card: 60 7% 97.9%;
-    --noise-orange: 14 100% 64%;
-    --noise-tan: 43 26% 78%;
-    --noise-cream: 60 60% 94%;
-    --chart-1: 14 100% 64%;
-    --chart-2: 48 42% 86%;
-    --chart-3: 60 60% 94%;
-    --chart-4: 44 25% 82%;
-    --chart-5: 45 7% 62%;
+    --ink-deep-card: 60 9% 98%;
+    --noise-orange: var(--primary);
+    --noise-tan: 37 63% 82%;
+    --noise-cream: 60 9% 96%;
   }
 }
 
@@ -66,7 +42,10 @@
     min-height: 100vh;
     font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
     background-color: hsl(var(--background));
-    background-image: none;
+    background-image:
+      linear-gradient(90deg, #80808012 1px, #0000 1px),
+      linear-gradient(#80808012 1px, #0000 1px);
+    background-size: 16px 16px;
   }
 
   ::selection {
